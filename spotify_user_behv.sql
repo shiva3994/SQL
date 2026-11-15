@@ -16,3 +16,5 @@ SELECT
 	SUM(S.Total_Amount) AS Total_sales
 FROM sales S
 GROUP BY S.State;
+
+-- 
