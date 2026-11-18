@@ -36,9 +36,16 @@ WHERE State = 'Delhi'; -- STR
 
 -- Q6. Show all customers whose tier is Gold.
 
-
+SELECT TOP 5 *
+FROM customers
+WHERE Customer_Tier = 'Gold'; -- STR
 
 -- Q7. Show customers older than 60.
+
+SELECT TOP 10 *
+FROM customers
+WHERE Age > 60;
+
 -- Q8. Show customers aged 25 or younger.
 -- Q9. Show Electronics products of the brand Apple.
 -- Q10. Show customers who live in Delhi OR Karnataka.
