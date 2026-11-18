@@ -66,12 +66,26 @@ WHERE State IN ('Delhi','Karnataka');
 
 -- Q11. Show customers whose tier is NOT Silver (use <>).
 
-
+SELECT TOP 10 *
+FROM customers
+WHERE Customer_Tier <> 'Silver';
 
 -- Q12. Show Customer_Name as Name and Total_Spent as Spend (use aliases).
+
+
+
 -- Q13. Show Product_Name and a new column Stock_Value = Selling_Price x Stock_Quantity.
+
+
+
 -- Q14. Show Delivered orders with Total_Amount above 50000.
+
+
+
 -- Q15. Show orders paid by COD that were Returned.
+
+
+
 -- Q16. Show products with Discount_Percent greater than 40.
 -- Q17. Show products with Selling_Price below 500.
 -- Q18. Show customers registered after 2024-01-01.
