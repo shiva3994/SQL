@@ -47,9 +47,27 @@ FROM customers
 WHERE Age > 60; -- INT
 
 -- Q8. Show customers aged 25 or younger.
+
+SELECT TOP 4 *
+FROM customers
+WHERE Age >= 25;
+
 -- Q9. Show Electronics products of the brand Apple.
+
+SELECT TOP 10 *
+FROM products
+WHERE Brand = 'Apple';
+
 -- Q10. Show customers who live in Delhi OR Karnataka.
+
+SELECT TOP 10 *
+FROM customers
+WHERE State IN ('Delhi','Karnataka');
+
 -- Q11. Show customers whose tier is NOT Silver (use <>).
+
+
+
 -- Q12. Show Customer_Name as Name and Total_Spent as Spend (use aliases).
 -- Q13. Show Product_Name and a new column Stock_Value = Selling_Price x Stock_Quantity.
 -- Q14. Show Delivered orders with Total_Amount above 50000.
