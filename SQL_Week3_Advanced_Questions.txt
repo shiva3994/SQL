@@ -1,0 +1,211 @@
+-- SQL SERVER INTERVIEW PRACTICE - WEEK 3 (ADVANCED) QUESTIONS
+-- Tables: customers, products, sales
+-- Note: Days 15 to 18 need window functions. Day 19 and 20 are about performance and programming. Day 21 is a mock interview, so try it without hints and with a timer.
+
+-- ============================================================
+-- DAY 15 - WINDOW FUNCTIONS: RANKING  (25 questions)
+-- ============================================================
+-- Q1. Add a ROW_NUMBER() over all products ordered by Selling_Price desc.
+-- Q2. Rank products by Selling_Price with RANK() and compare with DENSE_RANK() on ties.
+-- Q3. Rank customers by Total_Spent inside each State (PARTITION BY).
+-- Q4. Show the top 3 customers by Total_Spent in each State.
+-- Q5. Show the top 3 products by Avg_Rating in each Category (use Total_Reviews to break ties).
+-- Q6. Show the most expensive product in each Category.
+-- Q7. Show the cheapest product in each Brand.
+-- Q8. Show the latest order of each customer using ROW_NUMBER().
+-- Q9. Show the first order of each customer using ROW_NUMBER().
+-- Q10. Show the second order of each customer.
+-- Q11. Divide customers into 4 equal groups by Total_Spent using NTILE(4).
+-- Q12. Show the top 10 percent customers by spend using NTILE(10) or PERCENT_RANK().
+-- Q13. Use PERCENT_RANK() to show the percentile of each product by Selling_Price.
+-- Q14. Use CUME_DIST() on Age and explain the output.
+-- Q15. Rank States by revenue, then show the top 3 States.
+-- Q16. Rank Brands by revenue inside each Category and show the top 2.
+-- Q17. Show the top 3 best selling products by quantity in each Category.
+-- Q18. Show the top 5 orders by Total_Amount in each Payment_Mode.
+-- Q19. Rank customers by number of orders, and show customers ranked 1 to 5 (watch for ties).
+-- Q20. What is the difference between ROW_NUMBER, RANK, DENSE_RANK and NTILE? Show one table with sample output for each.
+-- Q21. Show products and their rank by price within the Category and within the whole table in one query.
+-- Q22. Use a CTE with DENSE_RANK to find the 3rd highest Selling_Price per Category.
+-- Q23. Show customers whose spend rank in their State is the same as their spend rank in their Age_Group.
+-- Q24. Why can't you use a window function in a WHERE clause? How do you work around it?
+-- Q25. Show the number of customers in each NTILE group with minimum and maximum spend.
+
+-- ============================================================
+-- DAY 16 - WINDOW FUNCTIONS: AGGREGATES, LAG, LEAD, RUNNING TOTALS  (25 questions)
+-- ============================================================
+-- Q1. Show each order with the total revenue of its customer using SUM() OVER (PARTITION BY).
+-- Q2. Show each product with the average price of its Category in a new column.
+-- Q3. Show each product and its difference from the Category average price.
+-- Q4. Show each order and its percentage of the customer's total spend.
+-- Q5. Show a running total of revenue by Order_Date.
+-- Q6. Show a running total of revenue per customer by Order_Date.
+-- Q7. Show monthly revenue with the previous month revenue using LAG().
+-- Q8. Show monthly revenue with the next month revenue using LEAD().
+-- Q9. Show month-over-month growth percentage.
+-- Q10. Show year-over-year growth for each month.
+-- Q11. Show for each customer the number of days since their previous order (LAG + DATEDIFF).
+-- Q12. Show customers whose gap between two orders was more than 90 days.
+-- Q13. Show a 3 month moving average of revenue (ROWS BETWEEN 2 PRECEDING AND CURRENT ROW).
+-- Q14. Show a 7 day moving average of daily revenue.
+-- Q15. Use FIRST_VALUE to show the first product bought by each customer.
+-- Q16. Use LAST_VALUE to show the last product bought by each customer (watch the frame clause).
+-- Q17. Show the cumulative percentage of revenue by product (a Pareto / 80-20 analysis).
+-- Q18. Show the running count of orders per State by month.
+-- Q19. Show the highest and lowest Total_Amount for each customer next to each order.
+-- Q20. Show each order's Total_Amount vs the previous order's Total_Amount of the same customer.
+-- Q21. Show customers whose spend increased in every consecutive order (hint: LAG and compare).
+-- Q22. Show the share of each Payment_Mode in total orders per State.
+-- Q23. What is the difference between ROWS and RANGE in the window frame? Show an example with ties.
+-- Q24. What is the default frame when ORDER BY is used in a window? Why does it matter for LAST_VALUE?
+-- Q25. Show the best month of each year and its difference from the average month of that year.
+
+-- ============================================================
+-- DAY 17 - ADVANCED CTEs, PIVOT, ROLLUP AND CUBE  (25 questions)
+-- ============================================================
+-- Q1. Recursive CTE: generate numbers 1 to 100.
+-- Q2. Recursive CTE: generate every date from 2025-01-01 to 2025-12-31.
+-- Q3. Use the date series to find days with no orders in 2025.
+-- Q4. Recursive CTE: build an employee hierarchy (create a small manager-employee table first) and show each level.
+-- Q5. Recursive CTE: show the full path (Manager > Team Lead > Employee) for each employee.
+-- Q6. Use MAXRECURSION and explain why it exists.
+-- Q7. PIVOT: show revenue by Category as rows and Payment_Mode as columns.
+-- Q8. PIVOT: show monthly orders as columns (Jan to Dec) for 2025.
+-- Q9. PIVOT: show Order_Status counts as columns for each State.
+-- Q10. Do the same as Q7 using CASE (conditional aggregation). Which is easier to maintain?
+-- Q11. UNPIVOT: convert the pivot of Q7 back to rows.
+-- Q12. Use GROUP BY ROLLUP to get revenue by Category, Brand with subtotals and grand total.
+-- Q13. Use GROUP BY CUBE for Category and Payment_Mode.
+-- Q14. Use GROUPING SETS for (State), (Payment_Mode) and () in one query.
+-- Q15. Use GROUPING() to label subtotal rows as 'All'.
+-- Q16. Use GROUPING_ID to separate the different subtotal levels.
+-- Q17. Use CROSS APPLY to get the top 3 orders for each customer.
+-- Q18. Use OUTER APPLY and explain the difference from CROSS APPLY.
+-- Q19. Use STRING_SPLIT to split 'Delhi,Gujarat,Punjab' and filter customers.
+-- Q20. Use STRING_AGG to show all distinct payment modes used by each customer.
+-- Q21. Use FOR XML PATH to do the same as Q20 (older SQL Server versions).
+-- Q22. Use CHOOSE, IIF and a nested CASE to create three different versions of the same label.
+-- Q23. Use TRY_CONVERT and TRY_CAST to clean a dirty column. Make a small example table first.
+-- Q24. Use OPENJSON or JSON_VALUE to read a small JSON text.
+-- Q25. Use FOR JSON PATH to output the top 5 customers as JSON.
+
+-- ============================================================
+-- DAY 18 - CLASSIC INTERVIEW QUESTIONS  (25 questions)
+-- ============================================================
+-- Q1. Find the 2nd highest Selling_Price (3 ways: subquery, TOP, DENSE_RANK).
+-- Q2. Find the Nth highest Selling_Price (change N easily).
+-- Q3. Find the Nth highest spender in each State.
+-- Q4. Find duplicate emails in customers.
+-- Q5. Find duplicate rows based on several columns (Customer_Name + Phone).
+-- Q6. Delete duplicates but keep one copy (use ROW_NUMBER inside a CTE on a copy table).
+-- Q7. Find customers who have the same name but different cities.
+-- Q8. Find rows with NULL in any column.
+-- Q9. Find consecutive order days for a customer (gaps and islands, step 1: find the pattern).
+-- Q10. Find the longest streak of consecutive order days for any customer.
+-- Q11. Find missing dates in the sales table (dates with no orders).
+-- Q12. Find the top 3 products per Category by revenue.
+-- Q13. Find customers who bought a product and returned it later (by status Returned).
+-- Q14. Find products that are always bought together (two products in the same order cannot happen here, so find products bought by the same customer on the same day).
+-- Q15. Find the percentage of customers who ordered more than once.
+-- Q16. Find monthly retention: customers who ordered in one month and again in the next month.
+-- Q17. Find new vs repeat customers by month.
+-- Q18. Find customers who haven't ordered in the last 90 days (relative to the latest date in the table).
+-- Q19. Find the median Selling_Price (PERCENTILE_CONT and without it).
+-- Q20. Find the mode (most frequent) Payment_Mode per State.
+-- Q21. Find employees earning more than their manager (create the small tables yourself).
+-- Q22. Swap the values of two columns using a single UPDATE.
+-- Q23. Find the running total that resets each month.
+-- Q24. Find the customers who are in the top 10 percent for both spend and order count.
+-- Q25. Find the difference between two consecutive rows in a column, for a column of your choice, without LAG (self join).
+
+-- ============================================================
+-- DAY 19 - INDEXES, PERFORMANCE AND TRANSACTIONS  (25 questions)
+-- ============================================================
+-- Q1. Create a clustered index on a table that has none (use a copy).
+-- Q2. Create a non-clustered index on customers(State).
+-- Q3. Create a composite index on sales(Customer_ID, Order_Date). Explain column order.
+-- Q4. Create a covering index with INCLUDE columns.
+-- Q5. Create a filtered index (for example only Cancelled orders).
+-- Q6. Create a unique index and test a duplicate insert.
+-- Q7. Show all indexes of a table using sys.indexes.
+-- Q8. Turn on SET STATISTICS IO and TIME and compare a query before and after an index.
+-- Q9. Read an execution plan: identify a Table Scan, Index Scan and Index Seek.
+-- Q10. What is a key lookup (RID lookup)? How do you remove it?
+-- Q11. Why does WHERE YEAR(Order_Date) = 2025 stop an index from being used? Rewrite it so it can.
+-- Q12. Why does WHERE Name LIKE '%abc' stop an index seek? What about 'abc%'?
+-- Q13. What is SARGability? Give three examples of non-SARGable conditions and fix them.
+-- Q14. Explain implicit conversion and how it hurts performance.
+-- Q15. Compare SELECT * vs selecting needed columns in terms of performance.
+-- Q16. Compare EXISTS vs IN vs JOIN for performance on large tables.
+-- Q17. Compare UNION vs UNION ALL for performance.
+-- Q18. Explain index fragmentation. How do you REBUILD vs REORGANIZE?
+-- Q19. Explain statistics in SQL Server and what UPDATE STATISTICS does.
+-- Q20. What is parameter sniffing? How can you fix it?
+-- Q21. Explain ACID with a bank transfer example. Write the transfer using BEGIN TRAN / COMMIT / ROLLBACK.
+-- Q22. Use TRY...CATCH with ROLLBACK and show the error using ERROR_MESSAGE().
+-- Q23. Explain the isolation levels: READ UNCOMMITTED, READ COMMITTED, REPEATABLE READ, SERIALIZABLE, SNAPSHOT.
+-- Q24. Explain dirty read, non-repeatable read and phantom read with one example each.
+-- Q25. What is a deadlock? Show how to reproduce one with two sessions and how to avoid it.
+
+-- ============================================================
+-- DAY 20 - STORED PROCEDURES, FUNCTIONS, TRIGGERS, DYNAMIC SQL  (25 questions)
+-- ============================================================
+-- Q1. Create a stored procedure that returns all customers.
+-- Q2. Create a stored procedure with one input parameter (State) that returns customers from that state.
+-- Q3. Create a stored procedure with a default parameter value.
+-- Q4. Create a stored procedure with an OUTPUT parameter that returns the total revenue of a customer.
+-- Q5. Create a stored procedure that returns the top N products by revenue (N as a parameter).
+-- Q6. Create a stored procedure that takes a start date and end date and returns revenue by Category.
+-- Q7. Add TRY...CATCH and a transaction inside a stored procedure that inserts an order and updates stock.
+-- Q8. Create a stored procedure that uses IF...ELSE to return different results.
+-- Q9. Use WHILE loop to print numbers 1 to 10.
+-- Q10. Create a scalar function that returns the tier label for a given Total_Spent.
+-- Q11. Create an inline table-valued function that returns orders of a customer.
+-- Q12. Create a multi-statement table-valued function and compare it with an inline one for performance.
+-- Q13. Use a function inside a SELECT on customers and explain why it can slow down a large query.
+-- Q14. Difference between a stored procedure and a function (5 points).
+-- Q15. Create an AFTER INSERT trigger that logs new rows into an audit table.
+-- Q16. Create an AFTER UPDATE trigger that stores the old and new values using the inserted and deleted tables.
+-- Q17. Create an INSTEAD OF DELETE trigger that marks a row inactive instead of deleting it.
+-- Q18. What are triggers' disadvantages? When would you avoid them?
+-- Q19. Write dynamic SQL with EXEC and sp_executesql that takes a table name and returns its row count.
+-- Q20. How do you prevent SQL injection in dynamic SQL?
+-- Q21. Use a cursor to loop through the top 10 customers and print their names. Then rewrite it without a cursor.
+-- Q22. Why are cursors usually discouraged? Name two situations where they are still fine.
+-- Q23. Use @@ROWCOUNT, @@ERROR and RAISERROR / THROW in a small script.
+-- Q24. Use SELECT INTO vs INSERT INTO ... SELECT. Explain the differences.
+-- Q25. What is the difference between temp tables, table variables and CTEs in terms of scope, statistics, and indexes?
+
+-- ============================================================
+-- DAY 21 - MOCK INTERVIEW: BUSINESS PROBLEMS AND THEORY  (30 questions)
+-- ============================================================
+-- Q1. Find the top 5 customers by revenue and show their share in total revenue.
+-- Q2. Find the Category with the highest return rate.
+-- Q3. Find the month with the highest revenue in each year and the growth over the previous month.
+-- Q4. Find the States where cancel percentage is above the overall cancel percentage.
+-- Q5. Find customers who ordered at least once every quarter of 2025.
+-- Q6. Find products that are in the top 3 by revenue in at least 2 States.
+-- Q7. Find the average time between a customer's first and second order.
+-- Q8. Find the customers whose average order value is above the overall average and who have more than 5 orders.
+-- Q9. Find the coupon code that gave the most revenue per discount rupee.
+-- Q10. Find the Payment_Mode with the highest Delivered percentage.
+-- Q11. Find the age group with the highest average order value in each Category.
+-- Q12. Find the day of the week with the most orders and the lowest orders.
+-- Q13. Find the brands that lost revenue in 2026 compared to 2025.
+-- Q14. Find customers who bought only discounted products (Discount_Percent > 0 every time).
+-- Q15. Find the cumulative revenue contribution of the top 20 percent of products.
+-- Q16. Create a customer segmentation: High (top 20 percent spend), Medium (next 30 percent) and Low (rest). Show counts.
+-- Q17. Build an RFM table: Recency (days since last order), Frequency (order count), Monetary (total spend) for each customer.
+-- Q18. Score each RFM value from 1 to 5 using NTILE and combine into a segment.
+-- Q19. Show customers who ordered, got a Returned status, and ordered again within 30 days.
+-- Q20. Create a daily revenue table with 7 day moving average and flag days below the average.
+-- Q21. Optimize a slow query: take any query from Day 9 and rewrite it to run faster. Explain what you changed.
+-- Q22. Theory: Explain the order of execution of a SQL query (FROM, WHERE, GROUP BY, HAVING, SELECT, ORDER BY).
+-- Q23. Theory: WHERE vs HAVING.
+-- Q24. Theory: DELETE vs TRUNCATE vs DROP.
+-- Q25. Theory: UNION vs UNION ALL vs INTERSECT vs EXCEPT.
+-- Q26. Theory: Clustered vs non-clustered index.
+-- Q27. Theory: Primary key vs foreign key vs unique key.
+-- Q28. Theory: CTE vs subquery vs temp table vs view.
+-- Q29. Theory: What is normalization and denormalization, and when would you denormalize?
+-- Q30. Theory: Explain how you would approach a slow report query step by step in an interview.
