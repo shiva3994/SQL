@@ -18,9 +18,26 @@ SELECT TOP 5 *,
 FROM customers;
 
 -- Q3. Show the first 10 rows of products.
+
+SELECT TOP 10 *
+FROM products;
+
 -- Q4. Count how many rows are in the sales table.
+
+SELECT
+	COUNT(*) AS count_rows
+FROM sales;
+
 -- Q5. Show all customers from the state of Delhi.
+
+SELECT TOP 5 *
+FROM customers
+WHERE State = 'Delhi'; -- STR
+
 -- Q6. Show all customers whose tier is Gold.
+
+
+
 -- Q7. Show customers older than 60.
 -- Q8. Show customers aged 25 or younger.
 -- Q9. Show Electronics products of the brand Apple.
