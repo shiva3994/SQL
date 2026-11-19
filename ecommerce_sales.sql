@@ -177,11 +177,16 @@ WHERE State IN ('Delhi', 'Gujarat', 'Rajasthan');
 
 -- Q2. Show customers NOT from Delhi, Gujarat or Rajasthan using NOT IN.
 
-
+SELECT TOP 20 *
+FROM customers
+WHERE State NOT IN ('Delhi', 'Gujarat', 'Rajasthan');
 
 -- Q3. Show customers aged between 30 and 40 (both included).
 
-
+SELECT TOP 20 *
+FROM customers
+WHERE Age BETWEEN 30 AND 40
+ORDER BY AGE ASC;
 
 -- Q4. Show orders placed in January 2025 using BETWEEN on Order_Date.
 
