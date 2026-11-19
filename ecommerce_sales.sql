@@ -168,16 +168,49 @@ WHERE Gender = 'female' AND Customer_Tier = 'Platinum';
 -- DAY 02 - Filtering Operators  (25 questions)
 -- Topics: IN, NOT IN, BETWEEN, LIKE, IS NULL, AND/OR precedence
 -- ============================================================
+
 -- Q1. Show customers from Delhi, Gujarat or Rajasthan using IN.
+
+SELECT TOP 20 *
+FROM customers
+WHERE State IN ('Delhi', 'Gujarat', 'Rajasthan');
+
 -- Q2. Show customers NOT from Delhi, Gujarat or Rajasthan using NOT IN.
+
+
+
 -- Q3. Show customers aged between 30 and 40 (both included).
+
+
+
 -- Q4. Show orders placed in January 2025 using BETWEEN on Order_Date.
+
+
+
 -- Q5. Show customers whose name starts with 'A'.
+
+
+
 -- Q6. Show customers whose name ends with 'Kumar'.
+
+
+
 -- Q7. Show customers whose email contains 'sharma'.
+
+
+
 -- Q8. Show cities whose SECOND letter is 'u' (use _).
+
+
+
 -- Q9. Show customers whose phone starts with +91-98.
+
+
+
 -- Q10. Show customers having a Gmail address (email ends with @gmail.com).
+
+
+
 -- Q11. Show orders where no coupon was used (Coupon_Code is NULL).
 -- Q12. Show orders that have a rating (Rating is NOT NULL).
 -- Q13. Show orders with Rating 4 or above (NULLs will not appear automatically).
