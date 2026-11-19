@@ -139,6 +139,9 @@ WHERE Avg_Rating >= 4.5;
 
 -- Q22. Show orders with Quantity = 3 where a coupon discount was given (Coupon_Discount > 0).
 
+SELECT TOP 5 *
+FROM sales
+WHERE Quantity = 3 AND Coupon_Discount > 0;
 
 
 -- Q23. Show all products that are NOT in the Electronics category.
