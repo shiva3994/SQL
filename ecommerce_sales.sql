@@ -143,18 +143,26 @@ SELECT TOP 5 *
 FROM sales
 WHERE Quantity = 3 AND Coupon_Discount > 0;
 
-
 -- Q23. Show all products that are NOT in the Electronics category.
 
-
+SELECT TOP 5 *
+FROM products
+WHERE Category <> 'Electronics';
 
 -- Q24. Show customers from Maharashtra who spent more than 100000.
 
-
+SELECT TOP 5 *
+FROM customers
+WHERE State = 'Maharashtra' AND Total_Spent > 100000;
 
 -- Q25. Show Customer_Name, Age, Customer_Tier of female Platinum customers older than 40.
 
-
+SELECT TOP 5 *,
+	Customer_Name,
+	Age,
+	Customer_Tier
+FROM customers
+WHERE Gender = 'female' AND Customer_Tier = 'Platinum';
 
 -- ============================================================
 -- DAY 02 - Filtering Operators  (25 questions)
