@@ -72,30 +72,82 @@ WHERE Customer_Tier <> 'Silver';
 
 -- Q12. Show Customer_Name as Name and Total_Spent as Spend (use aliases).
 
-
+SELECT TOP 10 *,
+	Customer_Name AS Name,
+	Total_Spent AS Spend
+FROM customers;
 
 -- Q13. Show Product_Name and a new column Stock_Value = Selling_Price x Stock_Quantity.
 
-
+SELECT TOP 10 *,
+	Product_Name,
+	(Selling_Price * Stock_Quantity) AS Stock_Value	
+FROM products;
 
 -- Q14. Show Delivered orders with Total_Amount above 50000.
 
-
+SELECT TOP 10 *
+FROM sales
+WHERE Order_Status = 'Delivered' AND 
+	  Total_Amount > 50000;
 
 -- Q15. Show orders paid by COD that were Returned.
 
-
+SELECT TOP 10 *
+FROM sales
+WHERE Payment_Mode = 'COD' AND
+	  Order_Status = 'Returned';
 
 -- Q16. Show products with Discount_Percent greater than 40.
+
+SELECT TOP 10 *
+FROM products
+WHERE Discount_Percent > 40;
+
 -- Q17. Show products with Selling_Price below 500.
+
+SELECT TOP 10 *
+FROM products
+WHERE Selling_Price < 500;
+
 -- Q18. Show customers registered after 2024-01-01.
+
+SELECT TOP 10 *
+FROM customers
+WHERE Registration_Date > '2024-01-01' -- DATE NEEDS QUOTES
+ORDER BY Registration_Date ASC;
+
 -- Q19. Show all orders placed from Chennai.
+
+SELECT TOP 10 *
+FROM sales
+WHERE City = 'Chennai';
+
 -- Q20. Show customers who have never ordered (Total_Orders = 0).
+
+SELECT TOP 10 *
+FROM customers
+WHERE Total_Orders = 0;
+
 -- Q21. Show products rated 4.5 or higher.
+
+
+
 -- Q22. Show orders with Quantity = 3 where a coupon discount was given (Coupon_Discount > 0).
+
+
+
 -- Q23. Show all products that are NOT in the Electronics category.
+
+
+
 -- Q24. Show customers from Maharashtra who spent more than 100000.
+
+
+
 -- Q25. Show Customer_Name, Age, Customer_Tier of female Platinum customers older than 40.
+
+
 
 -- ============================================================
 -- DAY 02 - Filtering Operators  (25 questions)
