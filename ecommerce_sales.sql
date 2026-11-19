@@ -131,7 +131,11 @@ WHERE Total_Orders = 0;
 
 -- Q21. Show products rated 4.5 or higher.
 
+USE ecommerce_sales;
 
+SELECT TOP 5 *
+FROM products
+WHERE Avg_Rating >= 4.5;
 
 -- Q22. Show orders with Quantity = 3 where a coupon discount was given (Coupon_Discount > 0).
 
