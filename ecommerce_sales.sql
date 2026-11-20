@@ -270,8 +270,19 @@ WHERE Unit_Price BETWEEN 1000 AND 5000
   AND Coupon_Discount IN ( 10, 20, 30);
 
 -- Q17. Show customers whose name contains 'Singh' anywhere.
+
+SELECT TOP 10 *
+FROM customers
+WHERE Customer_Name LIKE '%Singh%';
+
 -- Q18. Show customers whose name does NOT contain 'Kumar' (NOT LIKE).
+
+
+
 -- Q19. Show customers with pincode between 110000 and 110099.
+
+
+
 -- Q20. Show customers whose name starts with A, B or C using [ ].
 -- Q21. Show customers whose name does NOT start with a vowel ([^ ]).
 -- Q22. Show customers registered in September 2023 using >= and < (no BETWEEN).
