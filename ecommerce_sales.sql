@@ -203,7 +203,9 @@ WHERE Customer_Name LIKE 'A%';
 
 -- Q6. Show customers whose name ends with 'Kumar'.
 
-
+SELECT TOP 5 *
+FROM customers
+WHERE Customer_Name LIKE '%Kumar'
 
 -- Q7. Show customers whose email contains 'sharma'.
 
