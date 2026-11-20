@@ -209,7 +209,9 @@ WHERE Customer_Name LIKE '%Kumar'
 
 -- Q7. Show customers whose email contains 'sharma'.
 
-
+SELECT TOP 5 *
+FROM customers
+WHERE Email LIKE '%sharma%';
 
 -- Q8. Show cities whose SECOND letter is 'u' (use _).
 
