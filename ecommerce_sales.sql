@@ -197,7 +197,9 @@ ORDER BY Order_Date DESC;
 
 -- Q5. Show customers whose name starts with 'A'.
 
-
+SELECT TOP 5 *
+FROM customers
+WHERE Customer_Name LIKE 'A%';
 
 -- Q6. Show customers whose name ends with 'Kumar'.
 
