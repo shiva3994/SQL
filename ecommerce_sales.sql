@@ -215,7 +215,9 @@ WHERE Email LIKE '%sharma%';
 
 -- Q8. Show cities whose SECOND letter is 'u' (use _).
 
-
+SELECT TOP 5 *
+FROM customers
+WHERE City LIKE '_u%';
 
 -- Q9. Show customers whose phone starts with +91-98.
 
