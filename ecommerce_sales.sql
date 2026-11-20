@@ -221,7 +221,9 @@ WHERE City LIKE '_u%';
 
 -- Q9. Show customers whose phone starts with +91-98.
 
-
+SELECT TOP 5 *
+FROM customers
+WHERE Phone LIKE '+91-98%';
 
 -- Q10. Show customers having a Gmail address (email ends with @gmail.com).
 
