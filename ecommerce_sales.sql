@@ -251,7 +251,10 @@ WHERE Rating >= 4;
 
 -- Q14. Show Gold customers who live in Delhi OR Punjab. Use brackets correctly.
 
-
+SELECT TOP 5 *
+FROM customers
+WHERE Customer_Tier = 'Gold' AND State IN ('Delhi','Punjab')
+ORDER BY State;
 
 -- Q15. Show Fashion products of brand Nike or Puma.
 
