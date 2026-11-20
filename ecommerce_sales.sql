@@ -190,7 +190,10 @@ ORDER BY AGE ASC;
 
 -- Q4. Show orders placed in January 2025 using BETWEEN on Order_Date.
 
-
+SELECT TOP 5 *
+FROM sales
+WHERE Order_Date BETWEEN '01-JAN-2026' AND '31-JAN-2026'
+ORDER BY Order_Date DESC;
 
 -- Q5. Show customers whose name starts with 'A'.
 
