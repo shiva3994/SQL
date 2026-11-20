@@ -289,7 +289,15 @@ WHERE Pincode BETWEEN 110000 AND 110099;
 
 -- Q20. Show customers whose name starts with A, B or C using [ ].
 
+SELECT TOP 10 *
+FROM customers
+WHERE Customer_Name LIKE '[ABC]%';
 
+-- OPPOSIT
+
+SELECT TOP 10 *
+FROM customers
+WHERE Customer_Name LIKE '%[XYZ]';
 
 -- Q21. Show customers whose name does NOT start with a vowel ([^ ]).
 -- Q22. Show customers registered in September 2023 using >= and < (no BETWEEN).
