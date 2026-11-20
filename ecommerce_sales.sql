@@ -283,9 +283,14 @@ WHERE Customer_Name NOT LIKE '%Kumar%';
 
 -- Q19. Show customers with pincode between 110000 and 110099.
 
-
+SELECT TOP 10 *
+FROM customers
+WHERE Pincode BETWEEN 110000 AND 110099;
 
 -- Q20. Show customers whose name starts with A, B or C using [ ].
+
+
+
 -- Q21. Show customers whose name does NOT start with a vowel ([^ ]).
 -- Q22. Show customers registered in September 2023 using >= and < (no BETWEEN).
 -- Q23. Show Cancelled or Returned orders that were NOT paid by COD.
