@@ -277,7 +277,9 @@ WHERE Customer_Name LIKE '%Singh%';
 
 -- Q18. Show customers whose name does NOT contain 'Kumar' (NOT LIKE).
 
-
+SELECT TOP 10 *
+FROM customers
+WHERE Customer_Name NOT LIKE '%Kumar%';
 
 -- Q19. Show customers with pincode between 110000 and 110099.
 
