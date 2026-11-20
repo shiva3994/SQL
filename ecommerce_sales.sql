@@ -232,11 +232,35 @@ FROM customers
 WHERE Email LIKE '%@gmail.com';
 
 -- Q11. Show orders where no coupon was used (Coupon_Code is NULL).
+
+SELECT TOP 5 *
+FROM sales
+WHERE Coupon_Code IS NULL;
+
 -- Q12. Show orders that have a rating (Rating is NOT NULL).
+
+SELECT TOP 5 *
+FROM sales
+WHERE Rating IS NOT NULL;
+
 -- Q13. Show orders with Rating 4 or above (NULLs will not appear automatically).
+
+SELECT TOP 5
+
 -- Q14. Show Gold customers who live in Delhi OR Punjab. Use brackets correctly.
+
+
+
 -- Q15. Show Fashion products of brand Nike or Puma.
+
+
+
+
 -- Q16. Show products priced between 1000 and 5000 with a discount of 10, 20 or 30 percent.
+
+
+
+
 -- Q17. Show customers whose name contains 'Singh' anywhere.
 -- Q18. Show customers whose name does NOT contain 'Kumar' (NOT LIKE).
 -- Q19. Show customers with pincode between 110000 and 110099.
