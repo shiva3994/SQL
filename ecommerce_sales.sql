@@ -264,8 +264,10 @@ WHERE Brand = 'Nike' OR Brand = 'Puma';
 
 -- Q16. Show products priced between 1000 and 5000 with a discount of 10, 20 or 30 percent.
 
-
-
+SELECT TOP 10 * 
+FROM sales
+WHERE Unit_Price BETWEEN 1000 AND 5000 
+  AND Coupon_Discount IN ( 10, 20, 30);
 
 -- Q17. Show customers whose name contains 'Singh' anywhere.
 -- Q18. Show customers whose name does NOT contain 'Kumar' (NOT LIKE).
