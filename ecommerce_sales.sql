@@ -227,7 +227,9 @@ WHERE Phone LIKE '+91-98%';
 
 -- Q10. Show customers having a Gmail address (email ends with @gmail.com).
 
-
+SELECT TOP 5 *
+FROM customers
+WHERE Email LIKE '%@gmail.com';
 
 -- Q11. Show orders where no coupon was used (Coupon_Code is NULL).
 -- Q12. Show orders that have a rating (Rating is NOT NULL).
