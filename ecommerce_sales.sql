@@ -245,7 +245,9 @@ WHERE Rating IS NOT NULL;
 
 -- Q13. Show orders with Rating 4 or above (NULLs will not appear automatically).
 
-SELECT TOP 5
+SELECT TOP 5 *
+FROM sales
+WHERE Rating >= 4;
 
 -- Q14. Show Gold customers who live in Delhi OR Punjab. Use brackets correctly.
 
