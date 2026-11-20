@@ -258,8 +258,9 @@ ORDER BY State;
 
 -- Q15. Show Fashion products of brand Nike or Puma.
 
-
-
+SELECT TOP 10 *
+FROM products
+WHERE Brand = 'Nike' OR Brand = 'Puma';
 
 -- Q16. Show products priced between 1000 and 5000 with a discount of 10, 20 or 30 percent.
 
