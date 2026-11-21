@@ -300,25 +300,72 @@ FROM customers
 WHERE Customer_Name LIKE '%[XYZ]';
 
 -- Q21. Show customers whose name does NOT start with a vowel ([^ ]).
+
+SELECT TOP 5 *
+FROM customers
+WHERE Customer_Name LIKE '[^AEIOUaeiou]%';
+
 -- Q22. Show customers registered in September 2023 using >= and < (no BETWEEN).
+
+
+
 -- Q23. Show Cancelled or Returned orders that were NOT paid by COD.
+
+
+
 -- Q24. Show Gold or Platinum customers who have 5 to 10 orders.
+
+
+
 -- Q25. Show brands that have exactly 4 letters and start with 'N' (_ for one character).
+
+
 
 -- ============================================================
 -- DAY 03 - Sorting, TOP, DISTINCT and Paging  (26 questions)
 -- Topics: ORDER BY, TOP, TOP WITH TIES, DISTINCT, OFFSET-FETCH
 -- ============================================================
+
 -- Q1. Show all customers sorted by Customer_Name A to Z.
+
+
+
 -- Q2. Show all products sorted by Selling_Price, highest first.
+
+
+
 -- Q3. Show the 10 most expensive products (by Selling_Price).
+
+
+
 -- Q4. Show the 5 youngest customers.
+
+
+
 -- Q5. Sort customers by State A to Z, then by Total_Spent highest first inside each state.
+
+
+
 -- Q6. Show the list of unique states in customers.
+
+
+
 -- Q7. Show the unique Payment_Mode values in sales.
+
+
+
 -- Q8. Show unique combinations of State and City from customers.
+
+
+
 -- Q9. Count how many different cities exist in customers.
+
+
+
 -- Q10. Show the 10 highest Total_Amount orders that are Delivered.
+
+
+
 -- Q11. Show the top 5 products by Avg_Rating using TOP 5 WITH TIES.
 -- Q12. Show the top 1 PERCENT of customers by Total_Spent.
 -- Q13. Using OFFSET ... FETCH, skip the first 10 customers and show the next 10 (order by Customer_ID).
