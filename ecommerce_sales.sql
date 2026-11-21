@@ -327,7 +327,10 @@ WHERE (Order_Status = 'Cancelled' OR
 
 -- Q24. Show Gold or Platinum customers who have 5 to 10 orders.
 
-
+SELECT TOP 5 *
+FROM customers
+WHERE Customer_Tier IN ('Gold','Platinum') AND
+	  Total_Orders BETWEEN 5 AND 10;
 
 -- Q25. Show brands that have exactly 4 letters and start with 'N' (_ for one character).
 
