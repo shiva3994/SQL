@@ -313,7 +313,9 @@ WHERE Customer_Name LIKE '%[^AEIOUaeiou]';
 
 -- Q22. Show customers registered in September 2023 using >= and < (no BETWEEN).
 
-
+SELECT TOP 5 *
+FROM customers
+WHERE Registration_Date >= '1-SEP-2023' AND Registration_Date < '01-OCT-2023';
 
 -- Q23. Show Cancelled or Returned orders that were NOT paid by COD.
 
