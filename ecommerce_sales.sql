@@ -305,6 +305,12 @@ SELECT TOP 5 *
 FROM customers
 WHERE Customer_Name LIKE '[^AEIOUaeiou]%';
 
+-- OPPOSIT -- END WITH
+
+SELECT TOP 5 *
+FROM customers
+WHERE Customer_Name LIKE '%[^AEIOUaeiou]';
+
 -- Q22. Show customers registered in September 2023 using >= and < (no BETWEEN).
 
 
