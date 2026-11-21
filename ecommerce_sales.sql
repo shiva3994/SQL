@@ -319,7 +319,11 @@ WHERE Registration_Date >= '1-SEP-2023' AND Registration_Date < '01-OCT-2023';
 
 -- Q23. Show Cancelled or Returned orders that were NOT paid by COD.
 
-
+SELECT TOP 10 *
+FROM sales
+WHERE (Order_Status = 'Cancelled' OR 
+	  Order_Status = 'Returned') AND 
+	  Payment_Mode <> 'COD';
 
 -- Q24. Show Gold or Platinum customers who have 5 to 10 orders.
 
