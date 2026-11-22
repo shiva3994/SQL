@@ -334,7 +334,9 @@ WHERE Customer_Tier IN ('Gold','Platinum') AND
 
 -- Q25. Show brands that have exactly 4 letters and start with 'N' (_ for one character).
 
-
+SELECT TOP 5 *
+FROM products
+WHERE Brand LIKE 'N___';
 
 -- ============================================================
 -- DAY 03 - Sorting, TOP, DISTINCT and Paging  (26 questions)
