@@ -365,19 +365,26 @@ ORDER BY Selling_Price DESC;
 
 -- Q4. Show the 5 youngest customers.
 
-
+SELECT DISTINCT(Age) AS Age_small
+FROM customers
+ORDER BY Age ASC;
 
 -- Q5. Sort customers by State A to Z, then by Total_Spent highest first inside each state.
 
-
+SELECT *
+FROM customers
+ORDER BY State ASC,
+		 Total_Spent DESC;
 
 -- Q6. Show the list of unique states in customers.
 
-
+SELECT DISTINCT(State) AS Unique_state
+FROM customers
 
 -- Q7. Show the unique Payment_Mode values in sales.
 
-
+SELECT DISTINCT(Payment_Mode) AS Unique_payment_method
+FROM sales
 
 -- Q8. Show unique combinations of State and City from customers.
 
