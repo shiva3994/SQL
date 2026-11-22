@@ -401,7 +401,10 @@ FROM customers;
 
 -- Q10. Show the 10 highest Total_Amount orders that are Delivered.
 
-
+SELECT TOP 10 *
+FROM sales
+WHERE Order_Status = 'Delivered'
+ORDER BY Total_Amount DESC;
 
 -- Q11. Show the top 5 products by Avg_Rating using TOP 5 WITH TIES.
 -- Q12. Show the top 1 PERCENT of customers by Total_Spent.
