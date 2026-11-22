@@ -395,7 +395,9 @@ ORDER BY State ASC;
 
 -- Q9. Count how many different cities exist in customers.
 
-
+SELECT
+	COUNT(DISTINCT(City)) AS Unique_city
+FROM customers;
 
 -- Q10. Show the 10 highest Total_Amount orders that are Delivered.
 
