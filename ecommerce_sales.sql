@@ -407,21 +407,68 @@ WHERE Order_Status = 'Delivered'
 ORDER BY Total_Amount DESC;
 
 -- Q11. Show the top 5 products by Avg_Rating using TOP 5 WITH TIES.
+
+
+
 -- Q12. Show the top 1 PERCENT of customers by Total_Spent.
+
+
+
 -- Q13. Using OFFSET ... FETCH, skip the first 10 customers and show the next 10 (order by Customer_ID).
+
+
+
 -- Q14. Page 3 of products with 25 rows per page (order by Product_ID).
+
+
+
 -- Q15. Show the 5 products with the highest stock value (Selling_Price x Stock_Quantity), sorting by the expression.
+
+
+
 -- Q16. Show Customer_Name, Age sorted by the 2nd column (column position) highest first.
+
+
+
 -- Q17. Show the 10 latest orders using Order_Date then Order_Time (both newest first).
+
+
+
 -- Q18. Find the cheapest product in the Grocery category.
+
+
+
 -- Q19. Show the 10 best rated products that have at least 100 reviews.
+
+
+
 -- Q20. Count how many different customers have placed at least one order (use sales).
+
+
+
 -- Q21. Show unique non-NULL coupon codes used in sales.
+
+
+
 -- Q22. Sort customers in this custom order: Platinum, Gold, Silver (use CASE inside ORDER BY).
+
+
+
 -- Q23. Show the 3 earliest registered customers from Gujarat.
+
+
+
 -- Q24. Show 15 orders: highest Quantity first, and for equal quantity the lowest Total_Amount first.
+
+
+
 -- Q25. Show the latest 5 Cancelled orders.
+
+
+
 -- Q26. Show unique Customer_Age_Group values in sales, sorted A to Z.
+
+
 
 -- ============================================================
 -- DAY 04 - Aggregates, GROUP BY and HAVING  (30 questions)
