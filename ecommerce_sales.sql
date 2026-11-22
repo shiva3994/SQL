@@ -351,11 +351,17 @@ ORDER BY Customer_Name ASC;
 
 -- Q2. Show all products sorted by Selling_Price, highest first.
 
-
+SELECT TOP 10 *
+FROM products
+ORDER BY Selling_Price DESC;
 
 -- Q3. Show the 10 most expensive products (by Selling_Price).
 
-
+SELECT 
+	   TOP 10 Product_Name,
+	   Selling_Price
+FROM products
+ORDER BY Selling_Price DESC;
 
 -- Q4. Show the 5 youngest customers.
 
