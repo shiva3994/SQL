@@ -388,7 +388,10 @@ FROM sales;
 
 -- Q8. Show unique combinations of State and City from customers.
 
-
+SELECT 
+	DISTINCT State, City
+FROM customers
+ORDER BY State ASC;
 
 -- Q9. Count how many different cities exist in customers.
 
