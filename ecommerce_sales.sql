@@ -334,7 +334,7 @@ WHERE Customer_Tier IN ('Gold','Platinum') AND
 
 -- Q25. Show brands that have exactly 4 letters and start with 'N' (_ for one character).
 
-SELECT TOP 5 *
+SELECT *
 FROM products
 WHERE Brand LIKE 'N___';
 
@@ -345,7 +345,9 @@ WHERE Brand LIKE 'N___';
 
 -- Q1. Show all customers sorted by Customer_Name A to Z.
 
-
+SELECT TOP 10 *
+FROM customers
+ORDER BY Customer_Name ASC;
 
 -- Q2. Show all products sorted by Selling_Price, highest first.
 
