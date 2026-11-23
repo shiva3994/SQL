@@ -430,6 +430,9 @@ FETCH NEXT 10 ROWS ONLY;
 
 -- Q14. Page 3 of products with 25 rows per page (order by Product_ID).
 
+SELECT *
+FROM products
+ORDER BY Product_ID
 
 
 -- Q15. Show the 5 products with the highest stock value (Selling_Price x Stock_Quantity), sorting by the expression.
