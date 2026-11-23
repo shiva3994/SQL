@@ -410,13 +410,15 @@ ORDER BY Total_Amount DESC;
 
 USE ecommerce_sales;
 
-SELECT TOP 5 *
+SELECT TOP 5 WITH TIES *
 FROM products
 ORDER BY Avg_Rating DESC;
 
 -- Q12. Show the top 1 PERCENT of customers by Total_Spent.
 
-
+SELECT TOP 1 PERCENT *
+FROM customers
+ORDER BY Total_Spent DESC;
 
 -- Q13. Using OFFSET ... FETCH, skip the first 10 customers and show the next 10 (order by Customer_ID).
 
