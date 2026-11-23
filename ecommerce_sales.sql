@@ -422,7 +422,11 @@ ORDER BY Total_Spent DESC;
 
 -- Q13. Using OFFSET ... FETCH, skip the first 10 customers and show the next 10 (order by Customer_ID).
 
-
+SELECT *
+FROM customers
+ORDER BY Customer_ID
+OFFSET 10 ROWS
+FETCH NEXT 10 ROWS ONLY;
 
 -- Q14. Page 3 of products with 25 rows per page (order by Product_ID).
 
