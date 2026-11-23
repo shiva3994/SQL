@@ -466,7 +466,10 @@ ORDER BY Selling_Price ASC;
 
 -- Q19. Show the 10 best rated products that have at least 100 reviews.
 
-
+SELECT TOP 10 *
+FROM products
+WHERE Total_Reviews >= 100
+ORDER BY Avg_Rating DESC;
 
 -- Q20. Count how many different customers have placed at least one order (use sales).
 
