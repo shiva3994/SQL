@@ -453,7 +453,9 @@ ORDER BY 2 DESC; -- AS IN ORDER BY 2ND ITEM i.e. AGE
 
 -- Q17. Show the 10 latest orders using Order_Date then Order_Time (both newest first).
 
-
+SELECT TOP 10 *
+FROM sales
+ORDER BY Order_Date DESC, Order_Time DESC;
 
 -- Q18. Find the cheapest product in the Grocery category.
 
