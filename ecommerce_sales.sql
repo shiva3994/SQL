@@ -459,7 +459,10 @@ ORDER BY Order_Date DESC, Order_Time DESC;
 
 -- Q18. Find the cheapest product in the Grocery category.
 
-
+SELECT TOP 1 *
+FROM products
+WHERE Category = 'Grocery'
+ORDER BY Selling_Price ASC;
 
 -- Q19. Show the 10 best rated products that have at least 100 reviews.
 
