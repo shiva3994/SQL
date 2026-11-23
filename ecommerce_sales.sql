@@ -433,7 +433,8 @@ FETCH NEXT 10 ROWS ONLY;
 SELECT *
 FROM products
 ORDER BY Product_ID
-
+OFFSET 50 ROWS
+FETCH NEXT 25 ROWS ONLY;
 
 -- Q15. Show the 5 products with the highest stock value (Selling_Price x Stock_Quantity), sorting by the expression.
 
