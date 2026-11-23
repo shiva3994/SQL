@@ -438,7 +438,10 @@ FETCH NEXT 25 ROWS ONLY;
 
 -- Q15. Show the 5 products with the highest stock value (Selling_Price x Stock_Quantity), sorting by the expression.
 
-
+SELECT TOP 5 *,
+	   (Selling_Price*Stock_Quantity) AS highest_stock_value
+FROM products
+ORDER BY highest_stock_value DESC;
 
 -- Q16. Show Customer_Name, Age sorted by the 2nd column (column position) highest first.
 
