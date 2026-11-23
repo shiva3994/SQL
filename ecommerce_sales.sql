@@ -445,7 +445,11 @@ ORDER BY highest_stock_value DESC;
 
 -- Q16. Show Customer_Name, Age sorted by the 2nd column (column position) highest first.
 
-
+SELECT
+	Customer_Name,
+	Age
+FROM customers
+ORDER BY 2 DESC; -- AS IN ORDER BY 2ND ITEM i.e. AGE
 
 -- Q17. Show the 10 latest orders using Order_Date then Order_Time (both newest first).
 
