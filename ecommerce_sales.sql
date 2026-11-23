@@ -408,7 +408,11 @@ ORDER BY Total_Amount DESC;
 
 -- Q11. Show the top 5 products by Avg_Rating using TOP 5 WITH TIES.
 
+USE ecommerce_sales;
 
+SELECT TOP 5 *
+FROM products
+ORDER BY Avg_Rating DESC;
 
 -- Q12. Show the top 1 PERCENT of customers by Total_Spent.
 
