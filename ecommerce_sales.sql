@@ -473,7 +473,16 @@ ORDER BY Avg_Rating DESC;
 
 -- Q20. Count how many different customers have placed at least one order (use sales).
 
+SELECT
+	COUNT(DISTINCT Customer_ID) AS number_of_cust
+FROM customers
+WHERE Total_Orders >= 1;
 
+--
+
+SELECT 
+    COUNT(DISTINCT Customer_ID) AS number_of_cust
+FROM sales;
 
 -- Q21. Show unique non-NULL coupon codes used in sales.
 
