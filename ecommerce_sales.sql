@@ -513,7 +513,9 @@ ORDER BY Registration_Date ASC;
 
 -- Q24. Show 15 orders: highest Quantity first, and for equal quantity the lowest Total_Amount first.
 
-
+SELECT TOP 15 *
+FROM sales
+ORDER BY Quantity DESC, Total_Amount ASC;
 
 -- Q25. Show the latest 5 Cancelled orders.
 
