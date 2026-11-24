@@ -508,6 +508,7 @@ ORDER BY
 
 SELECT TOP 3 *
 FROM customers
+WHERE State = 'Gujarat'
 ORDER BY Registration_Date ASC;
 
 -- Q24. Show 15 orders: highest Quantity first, and for equal quantity the lowest Total_Amount first.
