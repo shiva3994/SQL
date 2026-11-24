@@ -532,8 +532,12 @@ SELECT
 FROM sales
 ORDER BY Customer_Age_Group ASC;
 
+--
 
-
+SELECT 
+	DISTINCT(Customer_Age_Group) AS Age_group
+FROM sales
+ORDER BY Customer_Age_Group ASC;
 
 -- ============================================================
 -- DAY 04 - Aggregates, GROUP BY and HAVING  (30 questions)
