@@ -486,7 +486,10 @@ FROM sales;
 
 -- Q21. Show unique non-NULL coupon codes used in sales.
 
-
+SELECT
+	DISTINCT(Coupon_Code) AS Distinct_code
+FROM sales
+WHERE Coupon_Code IS NOT NULL;
 
 -- Q22. Sort customers in this custom order: Platinum, Gold, Silver (use CASE inside ORDER BY).
 
