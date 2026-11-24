@@ -493,7 +493,16 @@ WHERE Coupon_Code IS NOT NULL;
 
 -- Q22. Sort customers in this custom order: Platinum, Gold, Silver (use CASE inside ORDER BY).
 
-
+SELECT *
+FROM customers
+ORDER BY
+	CASE Customer_Tier
+		  WHEN 'Platinum' THEN 1
+		  WHEN 'Gold' THEN 2
+		  WHEN 'Silver' THEN 3
+		  ELSE 4
+	END;
+	
 
 -- Q23. Show the 3 earliest registered customers from Gujarat.
 
