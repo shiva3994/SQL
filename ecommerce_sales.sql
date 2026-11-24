@@ -526,6 +526,13 @@ ORDER BY Order_Date DESC;
 
 -- Q26. Show unique Customer_Age_Group values in sales, sorted A to Z.
 
+SELECT 
+	DISTINCT(Customer_Age_Group) AS Age_group,
+	*
+FROM sales
+ORDER BY Customer_Age_Group ASC;
+
+
 
 
 -- ============================================================
