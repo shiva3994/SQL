@@ -506,7 +506,9 @@ ORDER BY
 
 -- Q23. Show the 3 earliest registered customers from Gujarat.
 
-
+SELECT TOP 3 *
+FROM customers
+ORDER BY Registration_Date ASC;
 
 -- Q24. Show 15 orders: highest Quantity first, and for equal quantity the lowest Total_Amount first.
 
