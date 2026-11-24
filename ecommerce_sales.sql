@@ -519,7 +519,10 @@ ORDER BY Quantity DESC, Total_Amount ASC;
 
 -- Q25. Show the latest 5 Cancelled orders.
 
-
+SELECT TOP 5 *
+FROM sales
+WHERE Order_Status = 'Cancelled'
+ORDER BY Order_Date DESC;
 
 -- Q26. Show unique Customer_Age_Group values in sales, sorted A to Z.
 
