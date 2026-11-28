@@ -552,9 +552,14 @@ FROM customers;
 
 -- Q2. Find the total sales amount (SUM of Total_Amount).
 
-
+SELECT
+	SUM(Total_Amount) AS sales_total
+FROM sales;
 
 -- Q3. Find the average Selling_Price of products.
+
+
+
 -- Q4. Find the minimum and maximum customer Age in one query.
 -- Q5. Show COUNT(*) and COUNT(Rating) from sales together. Why are they different?
 -- Q6. Find the total revenue from Delivered orders only.
