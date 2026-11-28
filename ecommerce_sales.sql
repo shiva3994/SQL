@@ -543,8 +543,17 @@ ORDER BY Customer_Age_Group ASC;
 -- DAY 04 - Aggregates, GROUP BY and HAVING  (30 questions)
 -- Topics: COUNT, SUM, AVG, MIN, MAX, GROUP BY, HAVING
 -- ============================================================
+
 -- Q1. Count the total number of customers.
+
+SELECT
+	COUNT(*) AS Total_cust
+FROM customers; 
+
 -- Q2. Find the total sales amount (SUM of Total_Amount).
+
+
+
 -- Q3. Find the average Selling_Price of products.
 -- Q4. Find the minimum and maximum customer Age in one query.
 -- Q5. Show COUNT(*) and COUNT(Rating) from sales together. Why are they different?
